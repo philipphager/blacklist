@@ -6,7 +6,6 @@ class Blacklist:
         self.file = file
         self.BEGIN = "# Blacklisted URLs - BEGIN\n"
         self.END = "# Blacklisted URLs - END\n"
-        self.REDIRECT_IP = "127.0.0.1"
 
     def set_domains(self, domains):
         with open(self.file, "r") as f:
