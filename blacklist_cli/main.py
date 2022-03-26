@@ -1,4 +1,5 @@
 import typer
+import validators
 
 from blacklist_cli.blacklist import Blacklist
 
@@ -10,12 +11,16 @@ blacklist = Blacklist("/etc/hosts")
 def block(domain: str):
     domains = blacklist.get_domains()
 
-    if domain in domains:
-        typer.echo(f"{domain} is already blacklisted.")
+    if validators.domain(domain):
+
+        if domain in domains:
+            typer.echo(f"{domain} is already blacklisted.")
+        else:
+            domains.append(domain)
+            blacklist.set_domains(domains)
+            typer.echo(f"{domain} added to blacklist.")
     else:
-        domains.append(domain)
-        blacklist.set_domains(domains)
-        typer.echo(f"{domain} added to blacklist.")
+        typer.echo(f"'{domain}' is not a valid domain.")
 
 
 @app.command()

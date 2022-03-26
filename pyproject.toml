@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "blacklist-cli"
-version = "0.1.1"
-description = "Hacky CLI to block websites through etc/hosts"
+version = "0.1.2"
+description = "Simple CLI to block websites locally through etc/hosts"
 authors = ["Philipp Hager <philipp.konstantin.hager@gmail.com>"]
 
 [tool.poetry.scripts]
@@ -10,6 +10,7 @@ blacklist = "blacklist_cli.main:app"
 [tool.poetry.dependencies]
 python = "^3.8"
 typer-cli = "^0.0.12"
+validators = "^0.18.2"
 
 [tool.poetry.dev-dependencies]
 
