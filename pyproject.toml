@@ -5,7 +5,7 @@ description = "Hacky CLI to block websites through etc/hosts"
 authors = ["Philipp Hager <philipp.konstantin.hager@gmail.com>"]
 
 [tool.poetry.scripts]
-blacklist = "src.main:app"
+blacklist = "main:app"
 
 [tool.poetry.dependencies]
 python = "^3.8"
