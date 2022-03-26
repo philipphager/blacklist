@@ -15,11 +15,11 @@ class Blacklist:
         begin_index = lines.index(self.BEGIN) if self.BEGIN in lines else len(lines)
 
         with open(self.file, "w") as f:
-            # Write original host file until src section
+            # Write original host file until blacklist_cli section
             for line in lines[:begin_index]:
                 f.write(line)
 
-            # Write src section
+            # Write blacklist_cli section
             f.write(self.BEGIN)
 
             for domain in domains:

@@ -1,13 +1,13 @@
 import typer
 
-from src.blacklist import Blacklist
+from blacklist_cli.blacklist import Blacklist
 
 app = typer.Typer()
 blacklist = Blacklist("/etc/hosts")
 
 
 @app.command()
-def add(domain: str):
+def block(domain: str):
     domains = blacklist.get_domains()
 
     if domain in domains:
@@ -19,7 +19,7 @@ def add(domain: str):
 
 
 @app.command()
-def remove(domain: str):
+def unblock(domain: str):
     domains = blacklist.get_domains()
 
     if domain in domains:
