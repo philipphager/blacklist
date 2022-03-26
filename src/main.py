@@ -1,6 +1,6 @@
 import typer
 
-from blacklist import Blacklist
+from src.blacklist import Blacklist
 
 app = typer.Typer()
 blacklist = Blacklist("/etc/hosts")
